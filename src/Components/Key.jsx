@@ -2,7 +2,7 @@ import React from "react";
 import "./Key.css";
 import { NOTE_TO_KEY } from "../global/constants";
 
-const Key = ({ note, pressedKeys }) => {
+const Key = ({ note, pressedKeys, playNote }) => {
   const noteIsFlat = note.length > 1;
   const keyIsPressed = pressedKeys.includes(NOTE_TO_KEY[note]);
 
@@ -10,8 +10,16 @@ const Key = ({ note, pressedKeys }) => {
   if (noteIsFlat) keyClassName += " flat";
   if (keyIsPressed) keyClassName += " pressed";
 
+  const handlePress = () => {
+    playNote(note);
+  };
+
   return (
-    <div className={keyClassName}>
+    <div
+      className={keyClassName}
+      onMouseDown={handlePress}  // For desktop users
+      onTouchStart={handlePress} // For mobile users
+    >
       {!noteIsFlat && <div className="key-text">{note.toUpperCase()}</div>}
     </div>
   );

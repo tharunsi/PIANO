@@ -15,11 +15,9 @@ const Piano = () => {
       }
     }
   };
-  
 
   const handleKeyDown = (event) => {
     if (event.repeat) return; // Ignore repeated keydown events
-
     const key = event.key;
     if (VALID_KEYS.includes(key) && !pressedKeys.includes(key)) {
       setPressedKeys((prevKeys) => [...prevKeys, key]);
@@ -39,13 +37,13 @@ const Piano = () => {
       window.removeEventListener("keydown", handleKeyDown);
       window.removeEventListener("keyup", handleKeyUp);
     };
-  }, [pressedKeys]); // Runs only when pressedKeys changes
+  }, [pressedKeys]);
 
   return (
     <div>
       <div className="piano">
         {NOTES.map((note, index) => (
-          <Key key={index} note={note} pressedKeys={pressedKeys} />
+          <Key key={index} note={note} pressedKeys={pressedKeys} playNote={playNote} />
         ))}
       </div>
 

@@ -3,6 +3,8 @@
     height: 300px;
     width: 60px;
     border: 2px solid black;
+    user-select: none; 
+    touch-action: manipulation;
   }
   
   .key.flat {
