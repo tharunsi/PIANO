@@ -20,7 +20,7 @@ const Key = ({ note, pressedKeys, playNote }) => {
       onMouseDown={handlePress}  // For desktop users
       onTouchStart={handlePress} // For mobile users
     >
-      {!noteIsFlat && <div className="key-text">{note.toUpperCase()}</div>}
+      {!noteIsFlat && <div className="key-text"><span>{note.toUpperCase()}</span></div>}
     </div>
   );
 };

@@ -1,31 +1,77 @@
 .key {
-    background-color: white;
-    height: 300px;
-    width: 60px;
-    border: 2px solid black;
+    
+    height: 250px;
+    width: 70px;
+    border: 1px solid #000;
     user-select: none; 
     touch-action: manipulation;
+    border-left: 1px solid #fff2;
+    border-bottom: 1px solid #bababa;
+    border-radius: 0 0 5px 5px;
+    box-shadow: -1px 0 0 #ffffffcc inset,
+    0 0 3px #00000033,inset -15px 0 20px #0006,
+    inset 3px 0 20px #fff, 0 5px 5px #000;
+    background: linear-gradient(to bottom, hsl(0, 0%, 93%) 0%, white 100%);
+    color: #0000004d;
+  }
+  .key:active{
+    box-shadow: -1px 0 0 #ffffffcc inset,
+    0 0 3px #00000033,inset -15px 0 20px #0006,
+    inset 3px 0 20px #fff, 0 5px 5px #000,inset -2px -49px 40px #0003;
   }
   
   .key.flat {
-    position: relative;
-    background-color: black;
-    margin-left: -17px;
-    margin-right: -17px;
-    height: 200px;
-    width: 30px;
+    margin: 0 -22px 0 -22px;
+    border: 1px solid #000;
+    border-radius: 0 0 3px 3px;
+    height: 160px;
+    width: 44px;
     z-index: 2;
+    box-shadow: -1px -1px 2px #ffffff33 inset,
+    0 -5px 2px 3px #00000099 inset, 0 2px 4px #00000080;
+    background: linear-gradient(
+        45deg, #212121 0%, #545454 100%
+    );
+    color: #ffffff80;
+  }
+  .key.flat:active{
+    background: linear-gradient(
+        -180deg, #212121 0%, #545454 100%
+    );
   }
   
-  .key.pressed, .key.flat.pressed {
-    background-color: #00d8ff;
+  .key.pressed{
+    box-shadow: -1px 0 0 #ffffffcc inset,
+    0 0 3px #00000033,inset -15px 0 20px #0006,
+    inset 3px 0 20px #fff, 0 5px 5px #000,inset -2px -49px 40px #0003;
   }
+
+  .key.flat.pressed {
+    background: linear-gradient(
+        -180deg, #212121 0%, #545454 100%
+    );
+    box-shadow: -1px -1px 2px #ffffff33 inset,
+    0 -5px 2px 3px #00000099 inset, 0 2px 4px #00000080;
+  }
+  
   
   .key-text {
     position: relative;
-    color: black;
-    font-weight: 600;
-    font-size: 36px;
-    margin-top: 240px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
     pointer-events: none;
-  }
+}
+
+.key-text span {
+    
+    position: relative;
+    color: black;
+    font-weight: 500;
+    font-size: 18px;
+    margin-bottom: -200px;
+    pointer-events: none;
+    text-align: center;
+}
